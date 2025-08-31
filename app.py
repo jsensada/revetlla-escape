@@ -68,10 +68,10 @@ def create_app():
                 return redirect(url_for("victory"))
             else:
                 _set_progress(level + 1)
-                flash("Unlocked! Moving to the next room…", "success")
+                flash("Genial! Ves al següent misteri…", "success")
                 return redirect(url_for("level", level=level + 1))
         else:
-            flash("Not quite. Try again or use the hint.", "danger")
+            flash("No del tot. Torna a intentar-ho o utilitza la pista", "danger")
             return redirect(url_for("level", level=level))
 
     @app.get("/victory")

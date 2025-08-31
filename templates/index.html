@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="card">
+    <h1>Benvinguts convidats!</h1>
+    <p class="muted">Ajudan's a resoldre tots els misteris que ens ha deixat el Tastet. Has de resoldre totes les pistes per ordre.</p>
+
+    <div class="levels">
+      {% for i in range(1, total_levels + 1) %}
+        {% set cls = 'pill' %}
+        {% if i < current_level %}{% set cls = 'pill ok' %}{% endif %}
+        {% if i == current_level %}{% set cls = 'pill current' %}{% endif %}
+        <span class="{{ cls }}">Level {{ i }}</span>
+      {% endfor %}
+    </div>
+
+    <p>
+      {% if current_level > total_levels %}
+        Has resolt tots els {{ total_levels }} misteris 🎉 Vés a <a href="{{ url_for('victory') }}">la solució final</a>.
+      {% else %}
+        Segueix al misteri <a href="{{ url_for('level', level=current_level) }}">Nivell {{ current_level }}</a>.
+      {% endif %}
+    </p>
+  </div>
+{% endblock %}

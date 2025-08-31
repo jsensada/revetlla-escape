@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="card">
+    <h2>Room {{ level }} of {{ total_levels }}</h2>
+    <p>{{ prompt }}</p>
+
+    {% if hint %}
+      <details><summary>Mostra una pista</summary><p class="muted">{{ hint }}</p></details>
+    {% endif %}
+
+    <form action="{{ url_for('check', level=level) }}" method="post">
+      <div class="row">
+        <input class="grow" autocomplete="off" name="key" type="text" placeholder="{{ placeholder }}" />
+        <button type="submit">Resol</button>
+      </div>
+    </form>
+  </div>
+{% endblock %}

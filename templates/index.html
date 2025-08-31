@@ -2,7 +2,7 @@
 {% block content %}
   <div class="card">
     <h1>Benvinguts convidats!</h1>
-    <p class="muted">Ajudan a resoldre tots els misteris que ens ha deixat el Tastet.</p>
+    <p class="muted">Ajuda a resoldre tots els misteris que ens ha deixat el Tastet.</p>
     <p class="muted">Has de resoldre totes les pistes per ordre.</p>
 
     <div class="levels">
@@ -10,7 +10,7 @@
         {% set cls = 'pill' %}
         {% if i < current_level %}{% set cls = 'pill ok' %}{% endif %}
         {% if i == current_level %}{% set cls = 'pill current' %}{% endif %}
-        <span class="{{ cls }}">Level {{ i }}</span>
+        <span class="{{ cls }}">Misteri {{ i }}</span>
       {% endfor %}
     </div>
 

@@ -1,18 +1,20 @@
 PUZZLES = [
     {
-        "prompt": "Room 1: There's a locked box. The note says: 'I'm an odd number. Remove a letter and I become even.' What's the key?",
-        "answers": ["seven"],
-        "hint": "Think of number words.",
-        "placeholder": "Type the word…",
+        "prompt": "Misteri 1: Lloc?",
+        "answers": ["Taleia"],
+        "hint": "Començar per T",
+        "placeholder": "Lloc",
     },
     {
-        "prompt": "Room 2: A keypad shows 2, 3, 5, 7, ?. Continue the pattern.",
-        "answers": ["11"],
+        "prompt": "Misteri 2: A quin mes?",
+        "answers": ["Juliol"],
         "hint": "Prime numbers.",
+        "placeholder": "mes de l'any",
     },
     {
-        "prompt": "Room 3: Password is the acronym of: 'Don't Repeat Yourself'.",
-        "answers": ["dry"],
-        "hint": "Common software principle.",
+        "prompt": "Misteri 3: A quina hora?",
+        "answers": ["19:00"],
+        "hint": "Si no tens gana... Tens?",
+        "placeholder": "Hora en format XX:XX",
     },
 ]

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="card">
+    <h2>Misteri {{ misteri }} de {{ total_misteris }}: {{key}}</h2>
+    <p>{{ prompt }}</p>
+    {% if media_type == "img" %}
+      <img class="responsive" src="{{ url_for('static', filename=media) }}">
+    {% endif %}
+    {% if media_type == "audio" %}
+      <audio controls>
+        <source src="{{ url_for('static', filename=media) }}" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+    {% endif %}
+
+    {% if hint %}
+      <details><summary>Mostra una pista</summary><p class="muted">{{ hint }}</p></details>
+    {% endif %}
+
+    <form action="{{ url_for('check', misteri=misteri) }}" method="post">
+      <div class="row">
+        <input class="grow" autocomplete="off" name="key" type="text" placeholder="{{ placeholder }}" />
+        <button type="submit">Resol</button>
+      </div>
+    </form>
+  </div>
+{% endblock %}

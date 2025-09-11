@@ -3,22 +3,27 @@
   <div class="card">
     <h1>Benvinguts convidats!</h1>
     <p class="muted">Ajuda a resoldre tots els misteris que ens ha deixat el Tastet.</p>
-    <p class="muted">Has de resoldre totes les pistes per ordre.</p>
+    <p class="muted">Has de resoldre tots els misteris per ordre.</p>
 
-    <div class="levels">
-      {% for i in range(1, total_levels + 1) %}
+    <div class="misteris">
+      {% for i in range(1, total_misteris + 1) %}
         {% set cls = 'pill' %}
-        {% if i < current_level %}{% set cls = 'pill ok' %}{% endif %}
-        {% if i == current_level %}{% set cls = 'pill current' %}{% endif %}
-        <span class="{{ cls }}">Misteri {{ i }}</span>
+        {% if i < current_misteri %}{% set cls = 'pill ok' %}{% endif %}
+        {% if i == current_misteri %}{% set cls = 'pill current' %}{% endif %}
+
+        {% if i <= current_misteri %}
+          <a class="{{ cls }}" href="{{ url_for('misteri', misteri=i) }}">{{ puzzle[i-1].key }}</a>
+        {% else %}
+          <span class="{{ cls }}">{{ puzzle[i-1].key }}</span>
+        {% endif %}
       {% endfor %}
     </div>
 
     <p>
-      {% if current_level > total_levels %}
-        Has resolt tots els {{ total_levels }} misteris 🎉 Vés a <a href="{{ url_for('victory') }}">la solució final</a>.
+      {% if current_misteri > total_misteris %}
+        Has resolt tots els {{ total_misteris }} misteris 🎉 Vés al <a href="{{ url_for('victory') }}">Resum</a>.
       {% else %}
-        Segueix al misteri <a href="{{ url_for('level', level=current_level) }}">Nivell {{ current_level }}</a>.
+        Segueix al Misteri: <a href="{{ url_for('misteri', misteri=current_misteri) }}">{{ puzzle[current_misteri-1].key  }}</a>.
       {% endif %}
     </p>
   </div>

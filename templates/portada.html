@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="card">
+    <h1>Guarda't la data...</h1>
+    <div class="video-wrapper">
+      <video controls>
+        <source src="{{ url_for('static', filename='portada_video.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <p><a href="{{ url_for('index')}}">Us vull ajudar!</a></p>
+  </div>
+{% endblock %}

@@ -2,7 +2,7 @@
 {% block content %}
   <div class="card">
     <h2>Misteri {{ misteri }} de {{ total_misteris }}: {{key}}</h2>
-    <p>{{ prompt }}</p>
+    <p>{{ prompt | safe }}</p>
     {% if media_type == "img" %}
       <img class="responsive" src="{{ url_for('static', filename=media) }}">
     {% endif %}

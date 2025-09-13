@@ -1,12 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
   <div class="card">
-    <h1>Fantastic! 🎉</h1>
-    <p>Has resolt tot els {{ total_misteris }} misteris.</p>
-    <p>----</p>
-    <p>Ens veiem el dia 11 de Juliol de 2026 a les 18:00 a la Taleia</p>
-    <p>Guarda-ho de moment... Ja donarem més noticies properament!</p>
-    <p>----</p>
+    <h1>Fantàstic! 🎉</h1>
+    <p>Has aconseguit resoldre els enigmes d'un cadell de quatre mesos...</p>
+    <p>No era tant difícil no?</p>
+    <p>Guarda't el dia i el lloc... Ja donarem més noticies quan les tinguem!</p>
+    <img class="responsive" src="{{ url_for('static', filename='final.jpg') }}">
     <p>Vols tornar a jugar? <a href="/reset">Torna a començar</a>.</p>
   </div>
 {% endblock %}

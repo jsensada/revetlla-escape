@@ -10,11 +10,11 @@ PUZZLES = [
     },
     {
         "key": "Dia",
-        "prompt": "Últimament cava per tot arreu... i aquest cop no n'ha fet pas pocs!",
+        "prompt": "Últimament el Tastet fa forats per tot arreu... i aquest cop no n'ha fet pas pocs!",
         "answers": ["11"],
         "media_type": "img",
         "media": "img_sabdia.jpg",
-        "hint": "Fixa't-hi una mica més. Només tens 31 opcions!",
+        "hint": "Per tot arreu!",
         "placeholder": "Format en 2 dígits XX",
     },
     {
